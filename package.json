@@ -1,10 +1,11 @@
 {
   "name": "babel-plugin-one-import-more",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "import one name from multiple source libs",
   "keywords": [
     "bable plugin",
-    "import"
+    "import",
+    "antd import"
   ],
   "main": "index.js",
   "scripts": {
