@@ -1,0 +1,26 @@
+{
+  "name": "babel-plugin-one-import-more",
+  "version": "1.0.0",
+  "description": "import one name from multiple source libs",
+  "keywords": [
+    "bable plugin",
+    "import"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kog-7/babel-plugin-one-import-more.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kog-7/babel-plugin-one-import-more/issues"
+  },
+  "homepage": "https://github.com/kog-7/babel-plugin-one-import-more#readme",
+  "dependencies": {
+    "babel-types": "^6.26.0"
+  }
+}
