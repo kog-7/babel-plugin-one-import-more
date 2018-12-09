@@ -1,8 +1,8 @@
 # babel-plugin-one-import-more
 
-import one name from multiple source libs;
+import components from multiple source libs in one scope name
 
-just like import {Button,Slide} from '@components'; Button is from antd design react,Slide is from your custom component
+just like import {Button,Slide} from '@components'; Button is from react antd design,Slide is from your custom component
 
 ![](https://img.shields.io/npm/v/babel-plugin-one-import-more.svg?style=flat)
 
@@ -12,7 +12,30 @@ just like import {Button,Slide} from '@components'; Button is from antd design r
 npm install babel-plugin-one-import-more -D
 ```
 
-## use in webpack example 
+## option
+
+#### custom scope name
+
+keyword: "@components" //define own name
+
+#### custom path include js/css
+
+```
+interface Js{
+  rely:string,//path,like antd/lib/button or /.../components/button
+  name:string //componentName
+}
+interface Css{
+  rely:string
+}
+
+
+dispatch:function(componentName:string, componentsArr:string[]):{js:Js,css?:Css} //compentName Button where use import Button,componentsArr just like ['Button'] in from '@components/Button'
+
+```
+
+
+##  example 
 use antd component and your own component in @components;
 
 ```
@@ -37,7 +60,7 @@ let mapComponents=[
                   'babel-plugin-one-import-more',
                   {
                     keyword: "@components",//custom root name
-                    dispatch: function(componentName, componentsArr, keyword) {//componentName is your component name,just like Button
+                    dispatch: function(componentName, componentsArr) {//componentName is your component name,just like Button
                       if (componentsArr.length > 0) {//@components/Button,not import {Button} from '@components';
                         componentName = componentsArr[0];
                       }
