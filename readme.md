@@ -71,7 +71,7 @@ let mapComponents=[
                         name = componentName.toLowerCase();
                       }
                       if (mapComponents.indexOf(componentName) === -1) {//custom components
-                        return {
+                        return {//if in js use wrap:true,will parse {} from lib 
                           js: { rely: `antd/lib/${name}`, name: componentName },//where render js path,and name
                           css: { rely: `antd/lib/${name}/style/css` }//which render css
                         };

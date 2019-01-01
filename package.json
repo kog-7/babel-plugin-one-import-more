@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-one-import-more",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "import components from multiple source libs in one scope name",
   "keywords": [
     "babel",

@@ -88,6 +88,8 @@ module.exports = function() {
           let newRelyObj = dispatchRes(componentName, componentsArr, keyword);
           let { css, js } = newRelyObj;
 
+         
+
           transforms.push(
             types.importDeclaration([importObj], types.stringLiteral(js.rely))
           );
@@ -108,12 +110,17 @@ module.exports = function() {
           let newRelyObj = dispatchRes(componentName, componentsArr, keyword);
           let { css, js } = newRelyObj;
           let newImportObj = importObj;
-          if (relyArr.length === 1) {
+        
+          if (relyArr.length === 1&&(js.wrap!==true)) {
             //for @comp.../Button,will  not change import source
             //not double layer
             newImportObj = types.importDefaultSpecifier(
               types.identifier(localComponentName)
             );
+          }
+          if(js.wrap===true){
+            newImportObj.imported.name=js.name;
+            newImportObj.local.name=localComponentName;
           }
 
           transforms.push(
